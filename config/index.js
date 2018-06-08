@@ -2,21 +2,21 @@
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 const path = require('path')
-module.exports= {
+
+module.exports = {
     dev: {
-        //Paths
+        // Paths
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
-        proxyTable: {// proxy all requests starting with /api to jsonplaceholder
-            '/api': {
-                target: 'http://localhost:8889/api/',
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/api': ''
-                }
-            }
+        proxyTable: { // proxy all requests starting with /api to jsonplaceholder
+            // '/api': {
+            //     target: 'http://localhost:8889/api/',
+            //     changeOrigin: true,
+            //     pathRewrite: {
+            //         '^/api': ''
+            //     }
+            // }
         },
-
 
         // Various Dev Server settings
         host: 'localhost', // can be overwritten by process.env.HOST
@@ -33,11 +33,14 @@ module.exports= {
         // If true, eslint errors and warnings will also be shown in the error overlay
         // in the browser.
         showEslintErrorsInOverlay: false,
+
         /**
          * Source Maps
          */
+
         // https://webpack.js.org/configuration/devtool/#development
         devtool: 'cheap-module-eval-source-map',
+
         // If you have problems debugging vue-files in devtools,
         // set this to false - it *may* help
         // https://vue-loader.vuejs.org/en/options.html#cachebusting
@@ -45,20 +48,23 @@ module.exports= {
 
         cssSourceMap: true
     },
-    build:{
+
+    build: {
         // Template for index.html
-        index:path.resolve(__dirname,'../dist/index.html'),
-        //Paths
-        assetsRoot:path.resolve(__dirname,'../dist'),
-        assetsSubDirectory:'static',
-        assetsPublicPath:'/',
+        index: path.resolve(__dirname, '../dist/index.html'),
+
+        // Paths
+        assetsRoot: path.resolve(__dirname, '../dist'),
+        assetsSubDirectory: 'static',
+        assetsPublicPath: '/',
 
         /**
          * Source Maps
          */
-        productionSourceMap:true,
-        //https://webpack.js.org/configuration/devtool/#production
-        devtool:'#source-map',
+
+        productionSourceMap: true,
+        // https://webpack.js.org/configuration/devtool/#production
+        devtool: '#source-map',
 
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.
@@ -73,5 +79,4 @@ module.exports= {
         // Set to `true` or `false` to always turn it on or off
         bundleAnalyzerReport: process.env.npm_config_report
     }
-
 }
